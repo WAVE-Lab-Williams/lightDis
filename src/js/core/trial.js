@@ -73,7 +73,7 @@ function runSingleTrial(
         trial_duration: stimDuration,
         data: {
             trial_category: 'stimulus' + trialType,
-            trial_stimulus: thisStim,
+            stimulus_mainimg: thisStim,
             stimulus_condition: stimDarkLocation,
             stimulus_duration: stimDuration,
         },
@@ -100,7 +100,7 @@ function runSingleTrial(
         trial_duration: MASK_DISP_TIME,
         data: {
             trial_category: 'mask' + trialType,
-            trial_stimulus: thisMask,
+            mask_stimulus: thisMask,
             mask_duration: MASK_DISP_TIME,
         },
     };
@@ -157,10 +157,11 @@ function runSingleTrial(
 
         data: {
             trial_category: 'answer' + trialType,
-            trial_stimulus: thisStim,
+            stimulus_mainimg: thisStim,
             stimulus_condition: stimDarkLocation,
             stimulus_duration: stimDuration,
             mask_stimulus: thisMask,
+            mask_duration: MASK_DISP_TIME,
         },
 
         on_finish: function(data) {
@@ -189,6 +190,5 @@ function runSingleTrial(
     timelineTrialsToPush.push(mask);
     timelineTrialsToPush.push(cursor_on);
     timelineTrialsToPush.push(dispSlider);
-   
 
 }

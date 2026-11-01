@@ -187,6 +187,7 @@ function processTrialData(data) {
             mask_stimulus: data.mask_stimulus,
             stimulus_condition: data.stimulus_condition,
             stimulus_duration: data.stimulus_duration,
+            stimulus_mainimg: data.stimulus_mainimg,
             trial_duration: data.trial_duration,
             time_elapsed: data.time_elapsed,
             timestamp: data.timestamp,
