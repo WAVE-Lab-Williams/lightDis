@@ -73,7 +73,7 @@ function runSingleTrial(
         trial_duration: stimDuration,
         data: {
             trial_category: 'stimulus' + trialType,
-            trial_stimulus: thisStim,
+            stimulus_mainimg: thisStim,
             stimulus_condition: stimDarkLocation,
             stimulus_duration: stimDuration,
         },
@@ -100,7 +100,7 @@ function runSingleTrial(
         trial_duration: MASK_DISP_TIME,
         data: {
             trial_category: 'mask' + trialType,
-            trial_stimulus: thisMask,
+            mask_stimulus: thisMask,
             mask_duration: MASK_DISP_TIME,
         },
     };
@@ -121,7 +121,7 @@ function runSingleTrial(
         html: `
             <div style="width: 900px; max-width: 90vw; margin: 0 auto; text-align: center;">
                 <p style="font-size: 24px; margin-bottom: 45px;">
-                    <strong>How far away was the construction sign?</strong>
+                    <strong>How far away was the construction sign? Based on these reference images, report where the sign was by positioning the slider <b>as precisely as possible</b>.</strong>
                 </p>
 
                 <div style="display: grid; grid-template-columns: 300px 1fr 300px; align-items: center; gap: 25px;">
@@ -157,10 +157,11 @@ function runSingleTrial(
 
         data: {
             trial_category: 'answer' + trialType,
-            trial_stimulus: thisStim,
+            stimulus_mainimg: thisStim,
             stimulus_condition: stimDarkLocation,
             stimulus_duration: stimDuration,
             mask_stimulus: thisMask,
+            mask_duration: MASK_DISP_TIME,
         },
 
         on_finish: function(data) {
@@ -189,6 +190,5 @@ function runSingleTrial(
     timelineTrialsToPush.push(mask);
     timelineTrialsToPush.push(cursor_on);
     timelineTrialsToPush.push(dispSlider);
-   
 
 }
